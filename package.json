@@ -1,0 +1,32 @@
+{
+  "name": "react-onclickoutside-decorator",
+  "version": "0.1.0",
+  "description": "A decorator for listening onClickOutside event for React components",
+  "main": "./lib/index.js",
+  "authors": [
+    "Pomax <pomax@nihongoresources.com>",
+    "Tim Kuo <kako0507@gmail.com>"
+  ],
+  "keywords": [
+    "react",
+    "click",
+    "onclick",
+    "outside",
+    "onclickoutside"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kako0507/react-onclickoutside-decorator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kako0507/react-onclickoutside-decorator.git/issues"
+  },
+  "homepage": "https://github.com/kako0507/react-onclickoutside-decorator#readme",
+  "devDependencies": {
+    "babel": "^5.8.20"
+  },
+  "scripts": {
+    "build": "babel src --stage 0 --out-dir lib"
+  }
+}
