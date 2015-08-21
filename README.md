@@ -6,6 +6,12 @@ Note that this decorator relies on the .classList property, which is supported b
 
 Forked from [react-onclickoutside](https://github.com/Pomax/react-onclickoutside)
 
+## Installation
+
+```
+npm install react-onclickoutside-decorator
+bower install react-onclickoutside-decorator
+```
 ## Usage
 
 ```js
@@ -17,7 +23,7 @@ class App extends Component {
     return <Child onClickOutside={this.handleClickOutside}/>;
   }
   handleClickOutside() {
-    console.log('onClickOutside');
+    // ...
   }
 }
 
@@ -28,3 +34,42 @@ class Child extends Component {
   }
 }
 ```
+
+## Regulate whether or not to listen for outside clicks
+
+When using this decorator, a component has two functions that can be used to explicitly listen for, or do nothing with, outside clicks
+
+- `enableOnClickOutside()` - Enables outside click listening by setting up the event listening bindings.
+- `disableOnClickOutside()` - Disables outside click listening by explicitly removing the event listening bindings.
+ 
+In addition, you can create a component that uses this decorator such that it has the code set up and ready to go, but not listening for outside click events until you explicitly issue its `enableOnClickOutside()`, by passing in a properly called `disableOnClickOutside`:
+
+```js
+import React, {Component} from 'react';
+import onClickOutside from 'react-onclickoutside-decorator';
+
+class App extends Component {
+  render() {
+    return (
+      <Child
+        onClickOutside={this.handleClickOutside}
+        disableOnClickOutside={true}
+      />
+    );
+  }
+  handleClickOutside() {
+    // ...
+  }
+}
+
+@onClickOutside
+class Child extends Component {
+  render() {
+    return <div/>;
+  }
+}
+```
+
+Marking elements as "skip over this one" during the event loop
+
+If you want the decorator to ignore certain elements, then add the class ignore-react-onclickoutside to that element and the callback won't be invoked when the click happens inside elements with that class.
