@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 function onClickOutside(ComposedComponent) {
   // Use a parallel array because we can't use
@@ -26,7 +27,7 @@ function onClickOutside(ComposedComponent) {
           }
           eventHandler(evt);
         }
-      }(React.findDOMNode(this), (this.props.onClickOutside || () => {})));
+      }(ReactDOM.findDOMNode(this), (this.props.onClickOutside || () => {})));
 
       var pos = registeredComponents.length;
       registeredComponents.push(this);
