@@ -44,12 +44,21 @@ function onClickOutside(ComposedComponent) {
       this.disableOnClickOutside();
       this.__outsideClickHandler = false;
       var pos = registeredComponents.indexOf(this);
-      if( pos>-1) {
+      if(pos > -1) {
         if (handlers[pos]) {
           // clean up so we don't leak memory
           handlers.splice(pos, 1);
           registeredComponents.splice(pos, 1);
         }
+      }
+    }
+
+    componentWillReceiveProps(props) {
+      if (!props.disableOnClickOutside && this.props.disableOnClickOutside) {
+        this.enableOnClickOutside();
+      }
+      else if (props.disableOnClickOutside  && !this.props.disableOnClickOutside) {
+        this.disableOnClickOutside();
       }
     }
 
