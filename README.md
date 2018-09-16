@@ -10,17 +10,17 @@ Forked from [react-onclickoutside](https://github.com/Pomax/react-onclickoutside
 
 ```
 npm install react-onclickoutside-decorator
-bower install react-onclickoutside-decorator
 ```
+
 ## Usage
 
 ```js
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import onClickOutside from 'react-onclickoutside-decorator';
 
 class App extends Component {
   render() {
-    return <Child onClickOutside={this.handleClickOutside}/>;
+    return <Child onClickOutside={this.handleClickOutside} />;
   }
   handleClickOutside() {
     // ...
@@ -30,7 +30,7 @@ class App extends Component {
 @onClickOutside
 class Child extends Component {
   render() {
-    return <div/>;
+    return <div />;
   }
 }
 ```
@@ -45,7 +45,7 @@ When using this decorator, a component has two functions that can be used to exp
 In addition, you can create a component that uses this decorator such that it has the code set up and ready to go, but not listening for outside click events until you explicitly issue its `enableOnClickOutside()`, by passing in a properly called `disableOnClickOutside`:
 
 ```js
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import onClickOutside from 'react-onclickoutside-decorator';
 
 class App extends Component {
@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <Child
         onClickOutside={this.handleClickOutside}
-        disableOnClickOutside={true}
+        disableOnClickOutside
       />
     );
   }
@@ -65,7 +65,7 @@ class App extends Component {
 @onClickOutside
 class Child extends Component {
   render() {
-    return <div/>;
+    return <div />;
   }
 }
 ```

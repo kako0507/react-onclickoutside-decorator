@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "window": false,
+    "self": false,
+    "document": false,
+    "Worker": false,
+    "postMessage": false,
+    "localStorage": false
+  },
+  "rules": {
+    "import/no-unresolved": ["error", { "ignore": ["^react$"] }],
+    "react/jsx-uses-vars": "error"
+  }
+}

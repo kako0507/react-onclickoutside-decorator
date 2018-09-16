@@ -1,6 +1,6 @@
 {
   "name": "react-onclickoutside-decorator",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A decorator for listening onClickOutside event for React components",
   "main": "./lib/index.js",
   "authors": [
@@ -24,9 +24,22 @@
   },
   "homepage": "https://github.com/kako0507/react-onclickoutside-decorator#readme",
   "devDependencies": {
-    "babel": "^5.8.20"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1"
   },
   "scripts": {
-    "build": "babel src --stage 0 --out-dir lib"
+    "build": "babel src --out-dir lib",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "babel-eslint": "^9.0.0"
   }
 }
