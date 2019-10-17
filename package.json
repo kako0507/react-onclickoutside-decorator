@@ -1,6 +1,6 @@
 {
   "name": "react-onclickoutside-decorator",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A decorator for listening onClickOutside event for React components",
   "main": "./lib/index.js",
   "authors": [
@@ -23,23 +23,43 @@
     "url": "https://github.com/kako0507/react-onclickoutside-decorator.git/issues"
   },
   "homepage": "https://github.com/kako0507/react-onclickoutside-decorator#readme",
+  "dependencies": {
+    "bulma": "0.7.5",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-github-corner": "^2.3.0",
+    "react-markdown": "4.2.2"
+  },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.1",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "eslint": "^5.6.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1"
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "raw-loader": "^3.1.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
   },
   "scripts": {
     "build": "babel src --out-dir lib",
-    "lint": "eslint src"
-  },
-  "dependencies": {
-    "babel-eslint": "^9.0.0"
+    "build-example": "webpack --mode=production",
+    "lint": "eslint src --ext=js,jsx"
   }
 }

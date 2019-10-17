@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import React from 'react';
 
 function nop() {}
@@ -29,6 +30,21 @@ function onClickOutside(ComposedComponent) {
       const pos = registeredComponents.length;
       registeredComponents.push(this);
       handlers[pos] = this.outsideClickHandler;
+
+      // If there is a truthy disableOnClickOutside property for this
+      // component, don't immediately start listening for outside events.
+      if (!this.props.disableOnClickOutside) {
+        this.enableOnClickOutside();
+      }
+    }
+
+    componentDidUpdate(prevProps) {
+      const { disableOnClickOutside } = this.props;
+      if (prevProps.disableOnClickOutside && !disableOnClickOutside) {
+        this.enableOnClickOutside();
+      } else if (!prevProps.disableOnClickOutside && disableOnClickOutside) {
+        this.disableOnClickOutside();
+      }
     }
 
     componentWillUnmount() {
@@ -41,15 +57,6 @@ function onClickOutside(ComposedComponent) {
           handlers.splice(pos, 1);
           registeredComponents.splice(pos, 1);
         }
-      }
-    }
-
-    componentDidUpdate(prevProps) {
-      const { disableOnClickOutside } = this.props;
-      if (prevProps.disableOnClickOutside && !disableOnClickOutside) {
-        this.enableOnClickOutside();
-      } else if (!prevProps.disableOnClickOutside && disableOnClickOutside) {
-        this.disableOnClickOutside();
       }
     }
 

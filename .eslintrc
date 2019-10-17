@@ -1,22 +1,13 @@
 {
-  "parser": "babel-eslint",
   "extends": [
-    "eslint:recommended",
-    "airbnb-base"
+    "airbnb"
   ],
-  "plugins": [
-    "react"
-  ],
-  "globals": {
-    "window": false,
-    "self": false,
-    "document": false,
-    "Worker": false,
-    "postMessage": false,
-    "localStorage": false
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
   },
   "rules": {
-    "import/no-unresolved": ["error", { "ignore": ["^react$"] }],
-    "react/jsx-uses-vars": "error"
+    "react/destructuring-assignment": 0
   }
 }
